@@ -16,7 +16,7 @@ export const useGifs = () => {
     if (trimmed.length == 0) return;
 
     if (!previousTerms.includes(trimmed)) {
-      setPreviousTerms([trimmed, ...previousTerms].splice(0, 7));
+      setPreviousTerms([trimmed, ...previousTerms].splice(0, 8));
     }
 
     const gifs = await getGifsByQuery(trimmed);
@@ -33,6 +33,7 @@ export const useGifs = () => {
 
     const gifs = await getGifsByQuery(term);
     setGifs(gifs);
+    gifsCache.current[term] = gifs;
   };
   return {
     //   Properties

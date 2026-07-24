@@ -5,7 +5,6 @@ import { fireEvent, render, screen } from "@testing-library/react";
 describe("MyCounterApp", () => {
   test("should render the component", () => {
     render(<MyCounterApp />);
-    // screen.debug();
 
     expect(
       screen.getByRole("heading", {
@@ -44,7 +43,6 @@ describe("MyCounterApp", () => {
     });
 
     fireEvent.click(button);
-    // screen.debug();
 
     expect(labelH1.innerHTML).toContain("counter: 1");
   });

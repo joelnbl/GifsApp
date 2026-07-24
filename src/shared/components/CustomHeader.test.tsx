@@ -21,7 +21,6 @@ describe("CustomHeader", () => {
 
   test("should not render description when not provided", () => {
     render(<CustomHeader title={title} />);
-    screen.debug();
     expect(screen.getByText(title)).toBeDefined();
     expect(screen.queryByText(description)).toBeNull();
   });

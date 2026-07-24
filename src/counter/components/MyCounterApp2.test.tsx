@@ -20,7 +20,6 @@ vi.mock("../hooks/useCounter", () => ({
 describe("MyCounterApp", () => {
   test("should render the component", () => {
     render(<MyCounterApp />);
-    screen.debug();
 
     expect(
       screen.getByRole("heading", {
@@ -50,7 +49,6 @@ describe("MyCounterApp", () => {
   test("should call handleAdd if button is clicked", () => {
     //
     render(<MyCounterApp />);
-    screen.debug();
 
     const button = screen.getByRole("button", {
       name: "+1",
